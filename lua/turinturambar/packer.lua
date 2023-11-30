@@ -45,10 +45,10 @@ return require('packer').startup(function(use)
 	  },
   }
   use {
-            'mfussenegger/nvim-jdtls',
-            disable = false,
---            ft = "java"
-        }
+      'mfussenegger/nvim-jdtls',
+      disable = false,
+      --            ft = "java"
+  }
   use('mfussenegger/nvim-dap')
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 

@@ -28,7 +28,7 @@ local features = {
 
   -- change this to `true` if you have `nvim-dap`,
   -- `java-test` and `java-debug-adapter` installed
-  debugger = false,
+  debugger = true,
 }
 
 local function get_jdtls_paths()
@@ -61,12 +61,16 @@ local function get_jdtls_paths()
   ---
   -- Include java-test bundle if present
   ---
-  local java_test_path = require('mason-registry')
-    .get_package('java-test')
-    :get_install_path()
+  --local java_test_path = require('mason-registry')
+  --  .get_package('java-test')
+  --  :get_install_path()
+
+  -- git clone git@github.com:microsoft/vscode-java-test.git 
+  local java_test_path = '/home/andrew/projects/vscode-java-test'
 
   local java_test_bundle = vim.split(
-    vim.fn.glob(java_test_path .. '/extension/server/*.jar'),
+    --vim.fn.glob(java_test_path .. '/extension/server/*.jar'),
+    vim.fn.glob(java_test_path .. '/server/*.jar'),
     '\n'
   )
 
