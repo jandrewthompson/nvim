@@ -48,9 +48,6 @@ local function get_jdtls_paths()
   path.java_agent = jdtls_install .. '/lombok.jar'
   path.launcher_jar = vim.fn.glob(jdtls_install .. '/plugins/org.eclipse.equinox.launcher_*.jar')
 
-  print(path.launcher_jar)
-  print(path.java_agent)
-
   if vim.fn.has('mac') == 1 then
     path.platform_config = jdtls_install .. '/config_mac'
   elseif vim.fn.has('unix') == 1 then
@@ -210,8 +207,6 @@ local function jdtls_setup(event)
     '-data',
     data_dir,
   }
-
-  print(dump(cmd))
 
   local lsp_settings = {
     java = {
