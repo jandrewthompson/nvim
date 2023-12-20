@@ -44,6 +44,11 @@ return require('packer').startup(function(use)
 		  'nvim-tree/nvim-web-devicons', -- optional
 	  },
   }
+  use {
+      'mfussenegger/nvim-jdtls',
+      disable = false,
+      --            ft = "java"
+  }
   use('mfussenegger/nvim-dap')
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 

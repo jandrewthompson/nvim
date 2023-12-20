@@ -25,6 +25,7 @@ require('mason-lspconfig').setup({
 	},
   handlers = {
     lsp.default_setup,
+    jdtls = lsp.noop
   },
 })
 
@@ -45,4 +46,3 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping.complete(),
   }),
 })
-
