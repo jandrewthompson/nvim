@@ -47,6 +47,52 @@ return {
                     local lua_opts = lsp_zero.nvim_lua_ls()
                     require('lspconfig').lua_ls.setup(lua_opts)
                 end,
+
+                basedpyright = function()
+                    require('lspconfig').basedpyright.setup {
+                        -- capabilities = capabilities,
+                        settings = {
+                            basedpyright = {
+                                typeCheckingMode = "standard",
+                            },
+                        },
+                    }
+                end,
+                pylsp = function()
+                    require('lspconfig').pylsp.setup {
+                        settings = {
+                            pylsp = {
+                                plugins = {
+                                    -- formatter options
+                                    black = { enabled = true },
+                                    autopep8 = { enabled = false },
+                                    yapf = { enabled = false },
+                                    -- linter options
+                                    pylint = { enabled = true, executable = "pylint" },
+                                    ruff = { enabled = false },
+                                    pyflakes = { enabled = false },
+                                    pycodestyle = { enabled = false },
+                                    -- type checker
+                                    pylsp_mypy = {
+                                        enabled = true,
+                                        -- overrides = { "--python-executable", py_path, true },
+                                        report_progress = true,
+                                        live_mode = false
+                                    },
+                                    -- auto-completion options
+                                    jedi_completion = { fuzzy = true },
+                                    foo = { fuzzy = true },
+                                    rope = { enabled = true },
+                                    -- import sorting
+                                    isort = { enabled = true },
+                                },
+                            },
+                        },
+                        flags = {
+                            debounce_text_changes = 200,
+                        },
+                    }
+                end,
             }
         })
 
