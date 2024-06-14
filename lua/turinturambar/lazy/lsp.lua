@@ -15,6 +15,7 @@ return {
         {'hrsh7th/cmp-calc'},
         {'hrsh7th/cmp-buffer'},
         {'hrsh7th/vim-vsnip'},
+        {'PaterJason/cmp-conjure'},
         {'L3MON4D3/LuaSnip'},
         {'mfussenegger/nvim-dap'},
     },
@@ -134,7 +135,8 @@ return {
                 { name = 'nvim_lua', keyword_length = 2},       -- complete neovim's Lua runtime API such vim.lsp.*
                 { name = 'buffer', keyword_length = 2 },        -- source current buffer
                 { name = 'vsnip', keyword_length = 2 },         -- nvim-cmp source for vim-vsnip 
-                { name = 'calc'},                               -- source for math calculation
+                { name = 'conjure' },
+                { name = 'calc' },                               -- source for math calculation
             },
             window = {
                 completion = cmp.config.window.bordered(),
