@@ -15,6 +15,7 @@ return {
         {'hrsh7th/cmp-calc'},
         {'hrsh7th/cmp-buffer'},
         {'hrsh7th/vim-vsnip'},
+        {'glepnir/lspsaga.nvim'},
         {'PaterJason/cmp-conjure'},
         {'L3MON4D3/LuaSnip'},
         {'mfussenegger/nvim-dap'},
@@ -24,6 +25,9 @@ return {
         -- LSP setup
         ---
         local lsp_zero = require('lsp-zero')
+        
+--        vim.g["conjure#filetypes"] = {'clojure'}
+ --       vim.g["conjure#filetype_suffixes#rust"] = 'false'
 
         lsp_zero.on_attach(function(client, bufnr)
             -- see :help lsp-zero-keybindings
@@ -94,6 +98,16 @@ return {
                         },
                     }
                 end,
+                purescriptls = function()
+                    require('lspconfig').purescriptls.setup {
+                        settings = {
+                            purescript = {
+                                formatter = "purs-tidy",
+                            },
+                        }
+                    }
+                end
+                
             }
         })
 
